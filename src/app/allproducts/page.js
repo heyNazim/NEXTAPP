@@ -6,7 +6,7 @@ import axios from 'axios'
 const Allproducts = () => {
     const [products, setProducts] = useState([])
     const nazim = async () => {
-        const result = await axios.get('http://localhost:3000/api/products')
+        const result = await axios.get('https://nextapp-pi-beryl.vercel.app/api/products')
         console.log(result.data)
         setProducts(result.data)
     }
