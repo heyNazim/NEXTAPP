@@ -17,3 +17,19 @@ const result = await Product.find()
     }
 
 }
+
+export async function POST(req){
+    try {
+        const conn = await mongoose.connect(MONGO_URL)
+if(conn){
+    const payload = await req.json()
+   let product =  new Product(payload);
+    const result = await product.save()
+    return NextResponse.json({result, success:true})
+}else{
+    return NextResponse.json({message:"false"})
+}
+    } catch (error) {
+        console.log(error)
+    }
+}
