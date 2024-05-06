@@ -20,6 +20,7 @@ const Allproducts = () => {
             <table>
                 <thead>
                     <tr>
+                        <td>S.no</td>
                         <td>P.Name</td>
                         <td>P.quantity</td>
                         <td>P.price</td>
@@ -30,6 +31,7 @@ const Allproducts = () => {
                     {
                         products.map((item, index) => (
                             <tr key={index + 1}>
+                                <td>{index+1}</td>
                                 <td>{item.name}</td>
                                 <td>{item.quantity}</td>
                                 <td>{item.price}</td>
